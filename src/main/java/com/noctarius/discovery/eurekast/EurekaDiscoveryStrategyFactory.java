@@ -26,6 +26,7 @@ public class EurekaDiscoveryStrategyFactory
     @Override
     public Class<? extends DiscoveryStrategy> getDiscoveryStrategyType() {
         return null;
+        return EurekaDiscoveryStrategy.class;
     }
 
     @Override
