@@ -1,1 +1,1 @@
-com.noctarius.discovery.eurekast.EurekaDiscoveryStrategyFactory
+org.hazelcast.discovery.eurekast.EurekaDiscoveryStrategyFactory

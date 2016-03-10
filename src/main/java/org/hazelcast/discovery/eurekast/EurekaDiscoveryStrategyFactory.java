@@ -1,4 +1,4 @@
-package com.noctarius.discovery.eurekast;
+package org.hazelcast.discovery.eurekast;
 
 import com.hazelcast.config.properties.PropertyDefinition;
 import com.hazelcast.logging.ILogger;
@@ -20,18 +20,22 @@ public class EurekaDiscoveryStrategyFactory
     static {
         List<PropertyDefinition> propertyDefinitions = new ArrayList<>();
         propertyDefinitions.add(EurekaProperties.APPLICATION_NAME);
+        propertyDefinitions.add(EurekaProperties.RESOLVER_DNS);
+        propertyDefinitions.add(EurekaProperties.RESOLVER_FILE);
+        propertyDefinitions.add(EurekaProperties.RESOLVER_HOSTNAME);
+        propertyDefinitions.add(EurekaProperties.RESOLVER_WRITER_PORT);
+        propertyDefinitions.add(EurekaProperties.RESOLVER_READER_PORT);
         PROPERTY_DEFINITIONS = Collections.unmodifiableCollection(propertyDefinitions);
     }
 
     @Override
     public Class<? extends DiscoveryStrategy> getDiscoveryStrategyType() {
-        return null;
         return EurekaDiscoveryStrategy.class;
     }
 
     @Override
     public DiscoveryStrategy newDiscoveryStrategy(DiscoveryNode discoveryNode, ILogger logger, Map<String, Comparable> map) {
-        return new EurekaDiscoveryStrategy(logger, map);
+        return new EurekaDiscoveryStrategy(discoveryNode, logger, map);
     }
 
     @Override
