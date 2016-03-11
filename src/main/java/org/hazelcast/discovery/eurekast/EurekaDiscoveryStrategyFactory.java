@@ -20,6 +20,7 @@ public class EurekaDiscoveryStrategyFactory
     static {
         List<PropertyDefinition> propertyDefinitions = new ArrayList<>();
         propertyDefinitions.add(EurekaProperties.APPLICATION_NAME);
+        propertyDefinitions.add(EurekaProperties.APPLICATION_GROUP);
         propertyDefinitions.add(EurekaProperties.RESOLVER_DNS);
         propertyDefinitions.add(EurekaProperties.RESOLVER_FILE);
         propertyDefinitions.add(EurekaProperties.RESOLVER_HOSTNAME);

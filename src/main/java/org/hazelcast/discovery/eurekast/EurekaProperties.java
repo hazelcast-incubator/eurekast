@@ -35,7 +35,8 @@ public final class EurekaProperties {
         }
     };
 
-    public static final PropertyDefinition APPLICATION_NAME = property("application-name", STRING);
+    public static final PropertyDefinition APPLICATION_NAME = property("application.name", STRING);
+    public static final PropertyDefinition APPLICATION_GROUP = property("application.group", STRING);
 
     public static final PropertyDefinition RESOLVER_HOSTNAME = optional("resolver.hostname", STRING);
     public static final PropertyDefinition RESOLVER_DNS = optional("resolver.dns", STRING);
